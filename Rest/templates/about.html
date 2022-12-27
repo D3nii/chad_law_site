@@ -1,0 +1,223 @@
+{% extends 'index.html' %}
+
+    {% block content %}
+
+	<div class="section bg-custom-light">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-7 mt-5 text-center" data-aos="fade-up">
+					<h2 class="heading">About Me</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section sec-about-me">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7" data-aos="fade-up">
+					<div class="section-heading">
+
+						<h3 class="heading mb-5">I'm Jon Campbell</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-between">
+				<div class="col-lg-4 mb-5 mb-lg-0"  data-aos="fade-up"  data-aos-delay="100">
+					<p class="text-white-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+
+					<p class="mb-5 text-white-50">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+
+					
+					<p><a href="{{ url_for('main.services') }}" class="btn btn-primary has-arrow mr-2">Our services <span class="icon-keyboard_arrow_right"></span></a></p>
+				</div>
+
+				<div class="col-lg-6 bg-1">
+					<div class="img-wrap"  data-aos="fade-up" data-aos-delay="200">
+						<img src="{{ url_for('static', filename='images/about_2.png') }}" alt="Image" class="img-fluid">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="section sec-3">
+		<div class="container">
+
+			<div id="nav-tab" class="row g-2 custom-nav-slider nav mb-5" role="tablist" data-aos="fade-up">
+
+				<a href="#tab-one" class="nav-link col-4 active" data-bs-toggle="tab" aria-selected="true" aria-controls="tab-one" role="tab">Investigative Services</a>
+
+				<a href="#tab-two"  class="nav-link col-4" data-bs-toggle="tab" aria-selected="false" aria-controls="tab-two" role="tab">Security Consultations</a>
+
+				<a href="#tab-three" class="nav-link col-4" data-bs-toggle="tab" aria-selected="false" aria-controls="tab-three" role="tab">Criminal Defense Investigations</a>
+
+			</div>
+
+			<div class="tab-content" data-aos="fade-up" data-aos-delay="100">
+				<div class="tab-pane fade show active" id="tab-one">
+					<div class="row justify-content-between mb-5">
+						<div class="col-lg-3">
+							<div class="section-heading">
+								<h3 class="heading mb-3">Investigative Services</h3>
+								<p class="mb-5 text-white-50">A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
+								<p><a href="#" class="btn btn-primary has-arrow mr-2">Read more <span class="icon-keyboard_arrow_right"></span></a></p>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<img src="{{ url_for('static', filename='images/hero_1.jpg') }}" alt="Image" class="img-fluid">
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane fade" id="tab-two">
+					<div class="row justify-content-between mb-5">
+						<div class="col-lg-3">
+							<div class="section-heading">
+								<h3 class="heading mb-3">Security Consultations</h3>
+								<p class="mb-5 text-white-50">A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
+								<p><a href="#" class="btn btn-primary has-arrow mr-2">Read more <span class="icon-keyboard_arrow_right"></span></a></p>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<img src="{{ url_for('static', filename='images/hero_2.jpg') }}" alt="Image" class="img-fluid">
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane fade" id="tab-three">
+					<div class="row justify-content-between mb-5">
+						<div class="col-lg-3">
+							<div class="section-heading">
+								<h3 class="heading mb-3">Criminal Defense Investigations</h3>
+								<p class="mb-5 text-white-50">A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
+								<p><a href="#" class="btn btn-primary has-arrow mr-2">Read more <span class="icon-keyboard_arrow_right"></span></a></p>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<img src="{{ url_for('static', filename='images/hero_3.jpg') }}" alt="Image" class="img-fluid">
+						</div>
+					</div>
+				</div>
+
+			</div>	
+
+
+		</div>
+	</div>
+
+
+
+
+
+	<div class="section">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-lg-7 order-lg-2">
+					<div class="img-wrap" data-aos="fade-left">
+						<img src="{{ url_for('static', filename='images/hero_2.jpg') }}" alt="Image" class="img-fluid rounded">	
+					</div>
+				</div>	
+				<div class="col-lg-4 me-auto mt-5" data-aos="fade-right" data-aos-delay="100">
+					<h3 class="mb-3">Peace &amp; order</h3>
+					<p class="mb-5 text-white-50">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+
+					<p><a href="#" class="btn btn-primary has-arrow mr-2">Read more <span class="icon-keyboard_arrow_right"></span></a></p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	{% endblock %}
+
+   <!--
+	<div class="site-footer">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="widget">
+						<h3>Contact</h3>
+						<address class="text-white-50">43 Raymouth Rd. Baltemoer, London 3910</address>
+						<ul class="list-unstyled links">
+							<li><a href="tel://11234567890">+1(123)-456-7890</a></li>
+							<li><a href="tel://11234567890">+1(123)-456-7890</a></li>
+							<li><a href="mailto:info@mydomain.com">info@mydomain.com</a></li>
+						</ul>
+					</div> <- /.widget -
+				</div> <!- /.col-lg-4 -
+				<div class="col-lg-4">
+					<div class="widget">
+						<h3>Sources</h3>
+						<ul class="list-unstyled float-start links">
+							<li><a href="#">About us</a></li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">Vision</a></li>
+							<li><a href="#">Mission</a></li>
+							<li><a href="#">Terms</a></li>
+							<li><a href="#">Privacy</a></li>
+						</ul>
+						<ul class="list-unstyled float-start links">
+							<li><a href="#">Partners</a></li>
+							<li><a href="#">Business</a></li>
+							<li><a href="#">Careers</a></li>
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">FAQ</a></li>
+							<li><a href="#">Creative</a></li>
+						</ul>
+					</div> <!- /.widget -
+				</div> <!- /.col-lg-4 -
+				<div class="col-lg-4">
+					<div class="widget">
+						<h3>Links</h3>
+						<ul class="list-unstyled links">
+							<li><a href="#">Our Vision</a></li>
+							<li><a href="#">About us</a></li>
+							<li><a href="#">Contact us</a></li>
+						</ul>
+
+						<ul class="list-unstyled social">
+							<li><a href="#"><span class="icon-instagram"></span></a></li>
+							<li><a href="#"><span class="icon-twitter"></span></a></li>
+							<li><a href="#"><span class="icon-facebook"></span></a></li>
+							<li><a href="#"><span class="icon-linkedin"></span></a></li>
+							<li><a href="#"><span class="icon-pinterest"></span></a></li>
+							<li><a href="#"><span class="icon-dribbble"></span></a></li>
+						</ul>
+					</div> <!- /.widget -
+				</div> <!- /.col-lg-4 -
+			</div> <!- /.row -
+
+			<div class="row mt-5">
+				<div class="col-12 text-center">
+					<p class="text-white-50">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" rel="nofollow noopener">Colorlib</a>
+					</p>
+
+				</div>
+			</div>
+		</div> <!- /.container -
+	</div> <!- /.site-footer -
+
+
+	<!- Preloader -
+	<div id="overlayer"></div>
+	<div class="loader">
+		<div class="spinner-border" role="status">
+			<span class="visually-hidden">Loading...</span>
+		</div>
+	</div>
+
+
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/tiny-slider.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/navbar.js"></script>
+	<script src="js/counter.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+</html>
+
+-->
