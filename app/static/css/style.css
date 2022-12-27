@@ -9430,3 +9430,6 @@ textarea {
       .site-footer .social li a:hover {
         background: #037ef3;
         color: #fff; }
+.social {
+  text-align: center !important;
+}
