@@ -11,7 +11,7 @@
         "source": "**",
         "run": {
           "serviceId": "test",
-          "region": "asia-east1" 
+          "region": "asia-east1"
         }
       }
     ]
