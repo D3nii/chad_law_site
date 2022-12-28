@@ -16,5 +16,6 @@ def create_app():
 
     return app
 
+
 def register_blueprints(server):
     server.register_blueprint(server_bp)
