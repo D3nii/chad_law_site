@@ -16,4 +16,4 @@ RUN pip install --no-cache-dir -r requirements.txt && pip install --no-cache-dir
 COPY --chown=app:app . ./
 USER app
 
-CMD exec gunicorn wsgi:server --bind 0.0.0.0:8888 --workers 1 --threads 8
+CMD exec gunicorn wsgi:server --bind :$PORT --log-level info --workers 1 --threads 8
