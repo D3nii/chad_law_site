@@ -6,11 +6,12 @@ ENV PYTHONUNBUFFERED True
 WORKDIR $APP_HOME
 
 ADD * /
+COPY requirements.txt /tmp/requirements.txt
 
 # Install Python dependencies and Gunicorn
 RUN apt-get update
 RUN apt-get install python3-pip -y
-RUN pip install --no-cache-dir -r requirements.txt && pip install --no-cache-dir gunicorn
+RUN pip install --no-cache-dir -r /tmp/requirements.txt && pip install --no-cache-dir gunicorn
 
 # Copy the rest of the codebase into the image
 COPY --chown=app:app . ./
