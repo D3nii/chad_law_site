@@ -1,0 +1,35 @@
+name: Push to GCR GitHub Action
+on: [push]
+
+jobs:
+  build-and-push-to-gcr:
+    runs-on: ubuntu-latest
+    steps:      
+      - uses: actions/checkout@v3
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v1
+
+        with:
+          credentials_json: ${{ secrets.SERVICE_ACCOUNT_KEY }}
+
+      - uses: actions/checkout@v2
+      - name: docker login
+        env:
+          DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
+          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+        run: |
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      - name: Build the Docker image
+        run: docker build -f Dockerfile -t gcr.io/solicitor-101/main .
+
+      - name: Docker Push
+        run: docker push gcr.io/solicitor-101/main
+
+      - name: Deploy to Cloud Run
+        uses: google-github-actions/deploy-cloudrun@v1
+        with:
+          service: 'test'
+          image: 'gcr.io/solicitor-101/main:latest'
+          secrets: FLASK_APP=FLASK_APP:1,FLASK_ENV=FLASK_ENV:1
+          region: asia-east1
