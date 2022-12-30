@@ -5,7 +5,7 @@ ENV APP_HOME /app
 ENV PYTHONUNBUFFERED True
 WORKDIR $APP_HOME
 
-ADD * .
+ADD * /
 
 # Install Python dependencies and Gunicorn
 RUN apt-get update
