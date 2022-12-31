@@ -22,24 +22,15 @@ jobs:
           echo ${{secrets.DOCKER_PASSWORD}} | docker login --username ${{secrets.DOCKER_USERNAME}} --password-stdin
           
       - name: Build the Docker image
-        run: docker build -f Dockerfile -t gcr.io/solicitor-101/test .
+        run: docker build -f Dockerfile -t gcr.io/solicitor-101/ga .
       
       - name: Docker Push
-#         uses: RafikFarhad/push-to-gcr-github-action@v5-beta
-#         with:
-#           # gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }} # can be base64 encoded or plain text || not needed if you use google-github-actions/auth
-#           gcloud_service_key: ${{ secrets.SERVICE_ACCOUNT_KEY }} 
-#           registry: gcr.io
-#           project_id: solicitor-101
-#           image_name: test
-#           image_tag: latest
-          
-        run: docker push gcr.io/solicitor-101/test:${{ github.sha }}
+        run: docker push gcr.io/solicitor-101/ga
 
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v1
         with:
-          service: 'test'
-          image: 'gcr.io/solicitor-101/test:latest'
+          service: 'ga'
+          image: 'gcr.io/solicitor-101/ga:latest'
           secrets: FLASK_APP=FLASK_APP:1,FLASK_ENV=FLASK_ENV:1
           region: asia-east1
