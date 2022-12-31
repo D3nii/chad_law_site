@@ -39,6 +39,6 @@ jobs:
         uses: google-github-actions/deploy-cloudrun@v1
         with:
           service: 'test'
-          image: 'gcr.io/solicitor-101/main:latest'
+          image: 'gcr.io/solicitor-101/test:latest'
           secrets: FLASK_APP=FLASK_APP:1,FLASK_ENV=FLASK_ENV:1
           region: asia-east1
