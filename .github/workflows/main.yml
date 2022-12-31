@@ -25,16 +25,16 @@ jobs:
         run: docker build -f Dockerfile -t gcr.io/solicitor-101/test .
       
       - name: Docker Push
-        uses: RafikFarhad/push-to-gcr-github-action@v5-beta
-        with:
-          # gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }} # can be base64 encoded or plain text || not needed if you use google-github-actions/auth
-          gcloud_service_key: ${{ secrets.SERVICE_ACCOUNT_KEY }} 
-          registry: gcr.io
-          project_id: solicitor-101
-          image_name: test
-          image_tag: latest
+#         uses: RafikFarhad/push-to-gcr-github-action@v5-beta
+#         with:
+#           # gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }} # can be base64 encoded or plain text || not needed if you use google-github-actions/auth
+#           gcloud_service_key: ${{ secrets.SERVICE_ACCOUNT_KEY }} 
+#           registry: gcr.io
+#           project_id: solicitor-101
+#           image_name: test
+#           image_tag: latest
           
-#         run: docker push gcr.io/solicitor-101/test
+        run: docker push gcr.io/solicitor-101/test:${{ github.sha }}
 
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v1
