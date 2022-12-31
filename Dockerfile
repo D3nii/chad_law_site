@@ -14,7 +14,7 @@ RUN apt-get install python3-pip -y
 RUN pip install --no-cache-dir -r /tmp/requirements.txt && pip install --no-cache-dir gunicorn
 
 # Copy the rest of the codebase into the image
-RUN groupadd -r app && adduser -r -g app app
+RUN useradd -ms /bin/bash app
 COPY --chown=app:app . ./
 USER app
 
