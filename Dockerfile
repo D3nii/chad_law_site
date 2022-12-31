@@ -14,7 +14,8 @@ RUN apt-get install python3-pip -y
 RUN pip install --no-cache-dir -r /tmp/requirements.txt && pip install --no-cache-dir gunicorn
 
 # Copy the rest of the codebase into the image
+RUN groupadd -r app && adduser -r -g app app
 COPY --chown=app:app . ./
-USER $APP_HOME
+USER app
 
 CMD exec gunicorn wsgi:server --bind :$PORT --log-level info --workers 1 --threads 8
