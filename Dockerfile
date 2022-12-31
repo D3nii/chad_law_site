@@ -15,6 +15,6 @@ RUN pip install --no-cache-dir -r /tmp/requirements.txt && pip install --no-cach
 
 # Copy the rest of the codebase into the image
 COPY --chown=app:app . ./
-USER app
+USER $APP_HOME
 
 CMD exec gunicorn wsgi:server --bind :$PORT --log-level info --workers 1 --threads 8
