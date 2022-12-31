@@ -22,10 +22,10 @@ jobs:
           echo ${{secrets.DOCKER_PASSWORD}} | docker login --username ${{secrets.DOCKER_USERNAME}} --password-stdin
           
       - name: Build the Docker image
-        run: docker build -f Dockerfile -t gcr.io/solicitor-101/main .
+        run: docker build -f Dockerfile -t gcr.io/solicitor-101/test .
 
       - name: Docker Push
-        run: docker push gcr.io/solicitor-101/main
+        run: docker push gcr.io/solicitor-101/test
 
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v1
