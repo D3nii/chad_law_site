@@ -25,7 +25,7 @@ jobs:
         run: docker build -f Dockerfile -t gcr.io/solicitor-101/test .
       
       - name: Docker Push
-      - uses: RafikFarhad/push-to-gcr-github-action@v5-beta
+        uses: RafikFarhad/push-to-gcr-github-action@v5-beta
         with:
           # gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }} # can be base64 encoded or plain text || not needed if you use google-github-actions/auth
           registry: gcr.io
